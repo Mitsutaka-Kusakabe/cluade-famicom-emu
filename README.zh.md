@@ -2,7 +2,7 @@
 
 在浏览器中运行的红白机(NES / Famicom)模拟器。核心用 C++ 编写,通过 Emscripten 编译为 WebAssembly。在此之上还有一层"玩硬件"的功能——可以点击弄断的60针卡边连接器、可以倾斜以模拟卡带没插到底的卡带、以及可以探测任意引脚的示波器。
 
-**▶ 试玩: https://goroman.github.io/cluade-famicom-emu/**
+**▶ 试玩: https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/**
 
 用"打开ROM"载入你自己的 .NES 文件(iNES格式)即可启动。支持桌面端与 Android Chrome。
 
@@ -48,7 +48,7 @@
 
 ## URL 参数
 
-`https://goroman.github.io/cluade-famicom-emu/?rom=<URL>&debug=1&pin=0`
+`https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/?rom=<URL>&debug=1&pin=0`
 
 | 参数 | 效果 |
 |------|------|
@@ -94,14 +94,11 @@ python3 -m http.server 8765 --bind 0.0.0.0
 
 ## 部署 (GitHub Pages)
 
-`web/` 目录作为 `gh-pages` 分支发布。
+GitHub Actions 工作流会在推送到 `main` 分支时自动将 `web/` 目录部署到 GitHub Pages。
 
-```sh
-./build.sh
-git add -A && git commit -m "..."
-git push
-git subtree push --prefix web origin gh-pages
-```
+1. 打开仓库的 **Settings** > **Pages**。
+2. 在 **Build and deployment** > **Source** 下选择 **GitHub Actions**。
+3. 推送到 `main` 分支即可自动完成部署。
 
 ## 目录结构
 

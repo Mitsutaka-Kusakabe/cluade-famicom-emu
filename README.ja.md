@@ -2,7 +2,7 @@
 
 Webブラウザで動くファミコン(NES)エミュレータ。コアは C++ で書き、Emscripten で WebAssembly にコンパイルしています。その上に「ハードウェアで遊ぶ」レイヤーを載せました——クリックで断線させられる60ピンのカードエッジ、傾けて半挿しを再現できるカセット、任意のピンにプローブを当てられるオシロスコープ。
 
-**▶ 遊ぶ: https://goroman.github.io/cluade-famicom-emu/**
+**▶ 遊ぶ: https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/**
 
 「ROMを開く」から手持ちの .NES ファイル(iNES形式)を読み込むと起動します。PC・Android Chrome 対応。
 
@@ -48,7 +48,7 @@ TASボタンから FCEUX の **.fm2** ムービーを読み込みます。FCEUX�
 
 ## URLパラメータ
 
-`https://goroman.github.io/cluade-famicom-emu/?rom=<URL>&debug=1&pin=0`
+`https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/?rom=<URL>&debug=1&pin=0`
 
 | パラメータ | 効果 |
 |-----------|------|
@@ -94,14 +94,11 @@ python3 -m http.server 8765 --bind 0.0.0.0
 
 ## デプロイ (GitHub Pages)
 
-`web/` を `gh-pages` ブランチとして配信しています。
+GitHub Actions により、`main` ブランチへのプッシュ時に `web/` ディレクトリが自動的に GitHub Pages へデプロイされます。
 
-```sh
-./build.sh
-git add -A && git commit -m "..."
-git push
-git subtree push --prefix web origin gh-pages
-```
+1. GitHub のリポジトリ **Settings** > **Pages** を開きます。
+2. **Build and deployment** の **Source** で **GitHub Actions** を選択します。
+3. `main` ブランチへ push されると、ワークフローが自動実行されサイトが公開されます。
 
 ## 構成
 

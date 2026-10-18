@@ -1828,7 +1828,7 @@ NOP*:1A imp,3A imp,5A imp,7A imp,DA imp,FA imp,80 imm,82 imm,89 imm,C2 imm,E2 im
     const romQ = qs.get('rom');
     // ROM未指定時は既定のゲームを起動
     const DEFAULT_ROM_URL =
-      'https://raw.githubusercontent.com/GOROman/calude-famicom-game/main/game.nes';
+      'https://raw.githubusercontent.com/Mitsutaka-Kusakabe/calude-famicom-game/main/game.nes';
     patchQ = qs.get('patch');
     loadRomFromUrl(romQ || DEFAULT_ROM_URL).then((ok) => {
       if (ok && patchQ) applyPatch(patchQ);

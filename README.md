@@ -2,7 +2,7 @@
 
 A Famicom (NES) emulator that runs in the browser. The core is written in C++ and compiled to WebAssembly with Emscripten — with a hardware playground on top: a live 60-pin cartridge connector you can break, a cartridge you can tilt to simulate a half-inserted cart, and an oscilloscope you can probe any pin with.
 
-**▶ Play: https://goroman.github.io/cluade-famicom-emu/**
+**▶ Play: https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/**
 
 Open any .NES file (iNES format) with "Open ROM". Works on desktop and Android Chrome.
 
@@ -48,7 +48,7 @@ Load an FCEUX **.fm2** movie with the TAS button. Playback power-cycles with the
 
 ## URL parameters
 
-`https://goroman.github.io/cluade-famicom-emu/?rom=<URL>&debug=1&pin=0`
+`https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/?rom=<URL>&debug=1&pin=0`
 
 | Parameter | Effect |
 |-----------|--------|
@@ -94,14 +94,11 @@ python3 -m http.server 8765 --bind 0.0.0.0
 
 ## Deploy (GitHub Pages)
 
-`web/` is published as the `gh-pages` branch.
+A GitHub Actions workflow automatically deploys the `web/` directory to GitHub Pages upon pushing to `main`.
 
-```sh
-./build.sh
-git add -A && git commit -m "..."
-git push
-git subtree push --prefix web origin gh-pages
-```
+1. Go to repository **Settings** > **Pages**.
+2. Under **Build and deployment** > **Source**, select **GitHub Actions**.
+3. Pushes to `main` will automatically deploy the site.
 
 ## Layout
 
