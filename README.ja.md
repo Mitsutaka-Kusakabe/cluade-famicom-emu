@@ -4,7 +4,7 @@ Webブラウザで動くファミコン(NES)エミュレータ。コアは C++ �
 
 **▶ 遊ぶ: https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/**
 
-「ROMを開く」から手持ちの .NES ファイル(iNES形式)を読み込むと起動します。PC・Android Chrome 対応。
+リンクを開くと初期ROMとして [nes-shooting](https://github.com/Mitsutaka-Kusakabe/nes-shooting) が自動起動します。「ROMを開く」から手持ちの .NES ファイル(iNES形式)を読み込むことも可能です。PC・Android Chrome 対応。
 
 🌐 [English](README.md) · [中文](README.zh.md)
 

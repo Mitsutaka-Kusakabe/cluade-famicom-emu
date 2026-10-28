@@ -4,7 +4,7 @@ A Famicom (NES) emulator that runs in the browser. The core is written in C++ an
 
 **▶ Play: https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/**
 
-Open any .NES file (iNES format) with "Open ROM". Works on desktop and Android Chrome.
+Defaults to booting [nes-shooting](https://github.com/Mitsutaka-Kusakabe/nes-shooting) on launch. You can also open any .NES file (iNES format) with "Open ROM". Works on desktop and Android Chrome.
 
 🌐 [日本語](README.ja.md) · [中文](README.zh.md)
 

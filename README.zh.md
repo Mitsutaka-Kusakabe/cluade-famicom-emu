@@ -4,7 +4,7 @@
 
 **▶ 试玩: https://mitsutaka-kusakabe.github.io/cluade-famicom-emu/**
 
-用"打开ROM"载入你自己的 .NES 文件(iNES格式)即可启动。支持桌面端与 Android Chrome。
+打开链接将默认自动启动 [nes-shooting](https://github.com/Mitsutaka-Kusakabe/nes-shooting)。也可以通过"打开ROM"载入你自己的 .NES 文件(iNES格式)。支持桌面端与 Android Chrome。
 
 🌐 [English](README.md) · [日本語](README.ja.md)
 
