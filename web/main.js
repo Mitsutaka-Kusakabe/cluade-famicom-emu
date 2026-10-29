@@ -1202,16 +1202,22 @@
   window.addEventListener('gamepaddisconnected', () => { gamepadConnected = false; });
 
   function pollGamepad() {
-    if (!gamepadConnected) return 0;
     let bits = 0;
-    for (const gp of navigator.getGamepads()) {
+    for (const gp of (navigator.getGamepads ? navigator.getGamepads() : [])) {
       if (!gp || !gp.connected) continue;
+      gamepadConnected = true;
       const b = gp.buttons;
-      const pressed = (i) => b[i] && b[i].pressed;
+      const pressed = (i) => b[i] && (b[i].pressed || b[i].value > 0.5);
       if (pressed(1) || pressed(3)) bits |= 1;    // A (right / top)
       if (pressed(0) || pressed(2)) bits |= 2;    // B (bottom / left)
-      if (pressed(8)) bits |= 4;                  // Select
-      if (pressed(9)) bits |= 8;                  // Start
+      const isStd = gp.mapping === 'standard' && b.length >= 16;
+      if (isStd) {
+        if (pressed(8)) bits |= 4;                  // Select
+        if (pressed(9)) bits |= 8;                  // Start
+      } else {
+        if (pressed(8) || pressed(6)) bits |= 4;    // Select (std: 8, joy.cpl: 7)
+        if (pressed(9) || pressed(7)) bits |= 8;    // Start (std: 9, joy.cpl: 8)
+      }
       if (pressed(12)) bits |= 16;                // Up
       if (pressed(13)) bits |= 32;                // Down
       if (pressed(14)) bits |= 64;                // Left
